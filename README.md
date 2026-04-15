@@ -28,3 +28,10 @@ ScreenShot Migration Category
 ScreenShot Database
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/76b33072-a262-46ec-aac2-46dde18ecc16" />
 
+Tampilan Admin ada halaman product
+<img width="1920" height="1080" alt="Screenshot (746)" src="https://github.com/user-attachments/assets/6f5e76cb-ba64-4a52-a4f2-2f00cb2f7bc2" />
+
+Tampilan User seperti biasanya saja
+<img width="1920" height="1080" alt="Screenshot (747)" src="https://github.com/user-attachments/assets/5a9b2fcd-67fa-42c3-812f-8cf4611b5578" />
+
+
