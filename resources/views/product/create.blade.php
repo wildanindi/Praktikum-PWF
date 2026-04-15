@@ -34,7 +34,7 @@
                                    text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 
                                    focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition">
                             @error('name')
-                                <p class="mt-1.5 text-xs text-red-500">{{ $message }}</p>
+                                <p class="mt-1.5 text-xs text-white">{{ $message }}</p>
                             @enderror
                         </div>
 
@@ -51,7 +51,7 @@
                                        text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 
                                        focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition">
                                 @error('quantity')
-                                    <p class="mt-1.5 text-xs text-red-500">{{ $message }}</p>
+                                    <p class="mt-1.5 text-xs text-white">{{ $message }}</p>
                                 @enderror
                             </div>
 
@@ -67,7 +67,7 @@
                                        text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 
                                        focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition">
                                 @error('price')
-                                    <p class="mt-1.5 text-xs text-red-500">{{ $message }}</p>
+                                    <p class="mt-1.5 text-xs text-white">{{ $message }}</p>
                                 @enderror
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                                 @endforeach
                             </select>
                             @error('user_id')
-                                <p class="mt-1.5 text-xs text-red-500">{{ $message }}</p>
+                                <p class="mt-1.5 text-xs text-white">{{ $message }}</p>
                             @enderror
                         </div>
 
