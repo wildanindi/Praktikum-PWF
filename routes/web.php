@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,6 +25,14 @@ Route::middleware('auth')->group(function () {
     Route::put('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
     Route::get('/product/edit/{product}', [ProductController::class, 'edit'])->name('product.edit');
     Route::delete('/product/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
+    
+    Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+    Route::post('/category', [CategoryController::class, 'store'])->name('category.store');
+    Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
+    Route::get('/category/{category}', [CategoryController::class, 'show'])->name('category.show');
+    Route::put('/category/{category}', [CategoryController::class, 'update'])->name('category.update');
+    Route::get('/category/{category}/edit', [CategoryController::class, 'edit'])->name('category.edit');
+    Route::delete('/category/{category}', [CategoryController::class, 'destroy'])->name('category.destroy');
 });
 
 Route::get('/about', [AboutController::class, 'index'])

@@ -101,6 +101,29 @@
                             @enderror
                         </div>
 
+                        <div>
+                            <label for="category_id" 
+                                   class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                                Category
+                            </label>
+                            <select id="category_id" name="category_id" 
+                                    class="w-full px-4 py-2.5 rounded-lg border text-sm 
+                                    {{ $errors->has('category_id') ? 'border-red-300 bg-red-50 dark:bg-red-900/20' : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700' }} 
+                                    text-gray-900 dark:text-gray-100 
+                                    focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition">
+                                <option value="">Select Category (Optional)</option>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}" 
+                                        {{ old('category_id', $product->category_id) == $category->id ? 'selected' : '' }}>
+                                        {{ $category->name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            @error('category_id')
+                                <p class="mt-1.5 text-xs text-white">{{ $message }}</p>
+                            @enderror
+                        </div>
+
                         <div class="flex items-center justify-between pt-2">
                             <button type="submit" form="delete-product-form"
                                     onclick="return confirm('Are you sure you want to delete this product?');"
