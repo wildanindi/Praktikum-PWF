@@ -24,6 +24,26 @@ class ProductController extends Controller
 
     public function store(StoreProductRequest $request)
     {
+        try {
+        $validated = $request->validated();
+
+        $validated['user_id'] = Auth::id();
+
+        $product = Product::create($validated);
+
+        Log::info('Menambah data produk', [
+            'list' => $product
+        ]);
+
+        return response()->json([
+            'message' => 'Produk berhasil ditambahkan!!',
+            'data' => $product,
+        ], 201);
+    } catch (\Throwable $e) {
+        Log::error('Error saat menambah product', [
+            'message' => $e->getMessage(),
+        ]);
+    }
         $validated = $request->validated();
 
         // Map 'quantity' to 'qty' for database
@@ -71,6 +91,27 @@ class ProductController extends Controller
 
     public function show($id)
     {
+        try {
+        $product = Product::with('category')->find($id);
+
+        if (!$product)
+        {
+            return response()->json([
+                'message' => 'Product tidak ditemukan',
+            ], 404);
+        }
+
+        return response()->json([
+            'message' => 'Product retrieved successfully',
+            'data' => $product
+        ], 200);
+    } catch (\Throwable $e) {
+        Log::error('Gagal mengambil data produk', [
+            'message' => $e->getMessage(),
+        ]);
+    }
+
+
         $product = Product::findOrFail($id);
 
         return view('product.view', compact('product'));
